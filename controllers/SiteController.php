@@ -92,6 +92,7 @@ class SiteController extends Controller
                 Image::thumbnail('@webroot/site/uploads/'.$name, 50, 50)->save(Yii::getAlias('@webroot/site/resized/'.$name), ['quality' => 80]);
                 $images->save();
             }
+            return $this->redirect(['site/images']);
         }
 
         return $this->render('upload', ['model' => $model]);
